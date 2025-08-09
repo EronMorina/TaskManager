@@ -1,0 +1,47 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #121821;
+  --text: #e6eef7;
+  --muted: #aab7c9;
+  --primary: #5b9cff;
+  --danger: #ff6b6b;
+  --accent: #32d399;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+header { display: flex; align-items: center; justify-content: space-between; }
+h1 { margin: 0; font-size: 28px; }
+
+.panel { background: var(--panel); border-radius: 12px; padding: 16px; margin: 16px 0; box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.35); }
+
+.form-grid { display: grid; grid-template-columns: 1.5fr 2fr repeat(3, 1fr) auto; gap: 10px; }
+input, select, button { padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: #0f141b; color: var(--text); }
+button { background: var(--primary); border: none; cursor: pointer; }
+button:hover { filter: brightness(1.1); }
+button.danger { background: var(--danger); }
+
+.filters { display: flex; gap: 10px; }
+
+.tasks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.task { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 12px; border-radius: 12px; background: #0e141c; border: 1px solid rgba(255,255,255,0.06); }
+.task .title { font-weight: 600; }
+.task .desc { color: var(--muted); margin-top: 4px; }
+.task .meta { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+.badge { padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid rgba(255,255,255,0.08); }
+.badge.low { background: rgba(50, 211, 153, 0.2); color: #b9ffe8; }
+.badge.medium { background: rgba(91, 156, 255, 0.2); color: #d1e2ff; }
+.badge.high { background: rgba(255, 107, 107, 0.2); color: #ffd1d1; }
+.muted { color: var(--muted); font-size: 12px; }
+.task-actions { display: flex; gap: 8px; align-items: center; }
+
+.empty { text-align: center; color: var(--muted); padding: 24px; }
+.error { background: rgba(255, 107, 107, 0.2); border: 1px solid rgba(255, 107, 107, 0.4); color: #ffd1d1; padding: 10px 12px; border-radius: 8px; }
+
+@media (max-width: 960px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+
